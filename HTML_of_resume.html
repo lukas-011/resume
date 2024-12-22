@@ -10,15 +10,17 @@
     <body>
         <!-- Header Section -->
         <header>
-            <hgroup>
+            <hgroup class="title">
                 <h1>Lukas McCain</h1>
                 <p><b>.NET Software Engineer | Full-Stack Developer</b></p>
             </hgroup>
-            <nav>
+
+            <nav class="navigation-bar">
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
                 <a href="#experience">Experience</a>
                 <a href="#contact">Contact</a>
+                <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
             </nav>
         </header>
 
@@ -26,14 +28,18 @@
             <!-- About Section -->
             <section id="about">
                 <h2>About Me</h2>
-                <img alt="Graduation Photo" src="images/PumpkinPatchPhoto.jpeg">
-                <p>
-                    I am a recent computer science graduate with a strong foundation in .NET development, full-stack development, API design, and user experience (UX) design.
-                    I have earned honors in both mathematics and computing, reflecting my dedication to technical excellence.
-                    Passionate about building efficient, scalable software, I am actively seeking new opportunities in software engineering.
-                    Feel free to connect with me — I’m always open to discussing new challenges and opportunities!
-                </p>
-                <button type="button">Learn More</button>
+                <div class="about-section-content">
+                    <div class="profile-picture">
+                        <img alt="Pumpkin Patch Photo" src="images/PumpkinPatchPhoto.jpeg">
+                    </div>
+                    <p>
+                        I am a recent computer science graduate with a strong foundation in .NET development, full-stack development, API design, and user experience (UX) design.
+                        I have earned honors in both mathematics and computing, reflecting my dedication to technical excellence.
+                        Passionate about building efficient, scalable software, I am actively seeking new opportunities in software engineering.
+                        Feel free to connect with me — I’m always open to discussing new challenges and opportunities!
+                    </p>
+                    <button type="button">Learn More</button>
+                </div>
             </section>
 
             <!-- Projects Section -->
@@ -51,14 +57,14 @@
 
             <!-- Experience Section -->
             <section id="experience">
-                <h2>Software Engineer: Mission Guatemala</h2>
+                <h2>Experience</h2>
                 <p></p>
             </section>
 
             <!-- Contact Section -->
             <section id="contact">
                 <h2>Contact</h2>
-                <p>Feel free to reach out via email or connect with me on LinkedIn!</p>
+                <p id="sub-title">Feel free to reach out via email or connect with me on LinkedIn!</p>
                 <ul>
                     <li>Email: <a href="mailto:lukasmccain0@gmail.com">lukasmccain0@gmail.com</a></li>
                     <li>LinkedIn: <a href="https://www.linkedin.com/in/lukas-mccain-aa5970240/">www.linkedin.com/in/lukas-mccain-aa5970240</a></li>
@@ -71,5 +77,13 @@
             <p>&copy; 2024 Lukas McCain. All rights reserved.</p>
         </footer>
 
+    <script>
+        function toggleTheme(){
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", newTheme)
+        }
+        document.documentElement.setAttribute("data-theme", "dark");
+    </script>
     </body>
 </html>
