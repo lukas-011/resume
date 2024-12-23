@@ -18,31 +18,40 @@
     --secondary-text: #A5A5A5; /* Silver Gray */
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 header {
-    padding: 1em;
-    background-color: var(--secondary-bg);
-    border-radius: 5px;
-    margin: 1em;
+    margin: 0.5em;
 
     .title {
-        display: flex;
-        flex-direction: row;
+        display: grid;
         align-items: center;
-        gap: 20px;
-        font-size: 2vw;
-
-        .sub-title {
-            color: var(--secondary-text);
-        }
+        font-size: 1vw;
+        margin: 1em;
     }
 
-    .navigation-bar{
+    .sub-title {
+        color: var(--secondary-text);
+        font-size: 1vw;
+    }
+
+    .navigation-bar {
         display: flex;
-        flex-direction: row;
+        gap: 1em;
+        align-content: center;
+        justify-content: space-between;
+        background-color: var(--accent);
     }
 
-    .theme-toggle{
+    .navigation-bar .nav-bar-item {
+        color: var(--bg);
+        padding: 1em;
+    }
 
+    .navigation-bar .theme-toggle {
+        margin-left: auto;
     }
 }
 
@@ -60,12 +69,33 @@ section {
     border-radius: 5px;
     margin: 1em;
 }
+.main-page-container{
+    height: 100vh;
+}
+.about-section{
+    padding: 20px;
+    height: 85vh;
 
-.about-section-content{
-    display: grid;
-    gap: 10px;
-    grid-template-rows: minmax(1fr, 1fr);
-    grid-template-columns: 200px 200px
+    .title{
+        display: grid;
+        grid-template-rows: auto 1fr;
+        font-size: 2vw;
+    }
+    .about-section-content{
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        height: 80%;
+
+        .about-section-sidebar{
+            background-color: var(--accent);
+            display: flex;
+            flex-direction: column;
+            height: 80%;
+            padding: 3em;
+            border-radius: 10px;
+        }
+    }
 }
 
 .profile-picture {
@@ -73,8 +103,7 @@ section {
     height: 200px; /* Equal to width for a perfect circle */
     border-radius: 50%; /* Makes it circular */
     overflow: hidden; /* Hides anything outside the circle */
-    border: 5px solid #ccc; /* Optional border for a clean look */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    border: 5px solid var(--accent); /* Optional border for a clean look */
 }
 
 .profile-picture img {
@@ -93,7 +122,6 @@ a:hover {
     color: var(--secondary-text);
 }
 
-/* Toggle Button */
 .theme-toggle {
     cursor: pointer;
     background-color: var(--accent);
@@ -103,6 +131,4 @@ a:hover {
     border-radius: 5px;
 }
 
-/* to make something proportional, thing/thewholemedia * 100 is the percent it should take up */
-
-
+/* to make something proportional, thing/the whole media * 100 is the percent it should take up */

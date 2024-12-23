@@ -8,39 +8,41 @@
     </head>
 
     <body>
-        <!-- Header Section -->
-        <header>
-            <hgroup class="title">
-                <h1>Lukas McCain</h1>
-                <p><b>.NET Software Engineer | Full-Stack Developer</b></p>
-            </hgroup>
-
-            <nav class="navigation-bar">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
-                <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
-            </nav>
-        </header>
-
         <main>
-            <!-- About Section -->
-            <section id="about">
-                <h2>About Me</h2>
-                <div class="about-section-content">
-                    <div class="profile-picture">
-                        <img alt="Pumpkin Patch Photo" src="images/PumpkinPatchPhotoCropped.jpeg">
+            <!-- Header Section -->
+            <div class="main-page-container">
+                <header>
+                    <nav class="navigation-bar">
+                        <a href="#about" class="nav-bar-item">About</a>
+                        <a href="#projects" class="nav-bar-item">Projects</a>
+                        <a href="#experience" class="nav-bar-item">Experience</a>
+                        <a href="#contact" class="nav-bar-item">Contact</a>
+                        <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+                    </nav>
+                </header>
+
+                <!-- About Section -->
+                <section id="about" class="about-section">
+                    <hgroup class="title">
+                        <h1>Lukas McCain</h1>
+                    </hgroup>
+
+                    <div class="about-section-content">
+                        <aside class="about-section-sidebar">
+                            <div class="profile-picture">
+                                <img alt="Pumpkin Patch Photo" src="images/PumpkinPatchPhotoCropped.jpeg">
+                            </div>
+                        </aside>
+                        <p>
+                            I am a recent computer science graduate with a strong foundation in .NET development, full-stack development, API design, and user experience (UX) design.
+                            I have earned honors in both mathematics and computing, reflecting my dedication to technical excellence.
+                            Passionate about building efficient, scalable software, I am actively seeking new opportunities in software engineering.
+                            Feel free to connect with me — I’m always open to discussing new challenges and opportunities!
+                        </p>
+                        <!--<button type="button">Learn More</button> -->
                     </div>
-                    <p>
-                        I am a recent computer science graduate with a strong foundation in .NET development, full-stack development, API design, and user experience (UX) design.
-                        I have earned honors in both mathematics and computing, reflecting my dedication to technical excellence.
-                        Passionate about building efficient, scalable software, I am actively seeking new opportunities in software engineering.
-                        Feel free to connect with me — I’m always open to discussing new challenges and opportunities!
-                    </p>
-                    <button type="button">Learn More</button>
-                </div>
-            </section>
+                </section>
+            </div>
 
             <!-- Projects Section -->
             <section id="projects">
