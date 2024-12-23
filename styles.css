@@ -1,21 +1,21 @@
 /* Default (Light Mode) Theme */
 :root {
-    --primary: #2C3E50; /* Deep Navy */
-    --accent: #F4C95D; /* Golden Sand */
-    --bg: #F7F9FA; /* Soft White */
-    --secondary-bg: #E5E8EB; /* Light Steel Gray */
-    --text: #2C2C2C; /* Charcoal Black */
-    --secondary-text: #6C757D; /* Slate Gray */
+    --primary: #264653; /* Deep Blue-Green */
+    --accent: #D17A74; /* Soft Coral Red */
+    --bg: #F4F1DE; /* Warm Beige */
+    --secondary-bg: #E9E2D0; /* Soft Cream */
+    --text: #1D3557; /* Navy Blue */
+    --secondary-text: #457B9D; /* Muted Sky Blue */
 }
 
 /* Dark Mode Theme */
 [data-theme="dark"] {
-    --primary: #34495E; /* Royal Blue */
-    --accent: #D4B45D; /* Antique Gold */
-    --bg: #1C1C1C; /* Dark Charcoal */
-    --secondary-bg: #2A2E33; /* Gunmetal Gray */
-    --text: #EDEDED; /* Ivory White */
-    --secondary-text: #A5A5A5; /* Silver Gray */
+    --primary: #1D3557; /* Navy Blue */
+    --accent: #B35A56; /* Muted Terracotta */
+    --bg: #1A1A1A; /* Charcoal Black */
+    --secondary-bg: #2B2B2B; /* Dark Gray */
+    --text: #EAEAEA; /* Light Grayish White */
+    --secondary-text: #A8DADC; /* Soft Aqua */
 }
 
 html{
