@@ -1,21 +1,25 @@
 /* Default (Light Mode) Theme */
 :root {
-    --primary: #264653; /* Deep Blue-Green */
-    --accent: #D17A74; /* Soft Coral Red */
-    --bg: #F4F1DE; /* Warm Beige */
-    --secondary-bg: #E9E2D0; /* Soft Cream */
-    --text: #1D3557; /* Navy Blue */
-    --secondary-text: #457B9D; /* Muted Sky Blue */
+    --primary: #FCA311;
+    --accent: #14213D;
+    --secondary-accent: #3D4A73;
+    --bg: #FFFFFF;
+    --secondary-bg: #E5E5E5;
+    --text: #14213D;
+    --secondary-text: #E5E5E5;
+    --tertiary-text: #FCA311
 }
 
 /* Dark Mode Theme */
 [data-theme="dark"] {
-    --primary: #1D3557; /* Navy Blue */
-    --accent: #B35A56; /* Muted Terracotta */
-    --bg: #1A1A1A; /* Charcoal Black */
-    --secondary-bg: #2B2B2B; /* Dark Gray */
-    --text: #EAEAEA; /* Light Grayish White */
-    --secondary-text: #A8DADC; /* Soft Aqua */
+    --primary: #FCA311; /* Keep the same bright primary color for contrast */
+    --accent: #14213D; /* White as the accent for dark mode */
+    --secondary-accent: #3D4A73; /* Dark blue for secondary accents */
+    --bg: #000000; /* Dark blue as the main background color */
+    --secondary-bg: #1F1F1F; /* Slightly lighter dark color for sections */
+    --text: #FFFFFF; /* White text for readability on dark background */
+    --secondary-text: #E5E5E5; /* Slightly muted white for secondary text */
+    --tertiary-text: #FCA311; /* Keep the tertiary text color consistent */
 }
 
 header {
@@ -30,8 +34,9 @@ header {
     }
 
     .navigation-bar .nav-bar-item {
-        color: var(--bg);
+        color: var(--primary);
         padding: 1em;
+
     }
 
     .navigation-bar .theme-toggle {
@@ -40,17 +45,16 @@ header {
 }
 
 body {
-    background-color: var(--bg);
+    background-color: var(--secondary-bg);
     color: var(--text);
     font-family: Arial, sans-serif;
-    height: 100%;
 }
 
 section {
     padding: 1em;
     margin: 1em;
 
-    background-color: var(--secondary-bg);
+    background-color: var(--bg);
 
     border-radius: 5px;
     height: 90vh;
@@ -69,7 +73,7 @@ section {
 
     .about-section-sidebar{
         background-color: var(--accent);
-        box-shadow: 10px 10px var(--bg);
+        /*box-shadow: 10px 10px var(--bg);*/
 
         display: flex;
         flex-direction: column;
@@ -113,9 +117,9 @@ section {
 
             .about-section-main-content-skills {
                 flex: 1;
-                background-color: var(--accent);
+                background-color: var(--secondary-accent);
                 border-radius: 10px;
-                box-shadow: 10px 10px var(--bg);
+                /*box-shadow: 10px 10px var(--bg);*/
             }
         }
 
@@ -131,8 +135,8 @@ section {
     height: 200px;
     border-radius: 50%;
     overflow: hidden;
-    border: 5px solid var(--accent);
-    box-shadow: 0 0 10px var(--bg);
+    border: 5px solid var(--primary);
+    /*box-shadow: 0 0 10px var(--bg);*/
 }
 
 .profile-picture img {
@@ -145,19 +149,28 @@ section {
 a {
     color: var(--accent);
     text-decoration: none;
+    transition: box-shadow 0.3s;
+}
+
+a + a {
+    border-left: 1px solid var(--primary)
 }
 
 a:hover {
-    color: var(--secondary-text);
+    box-shadow: inset 0 -5px 0 #FCA311;
 }
 
 .theme-toggle {
     cursor: pointer;
     background-color: var(--accent);
-    color: var(--bg);
+    color: var(--primary);
     border: none;
     padding: 0.5em 1em;
-    border-radius: 5px;
+    transition: box-shadow 0.3s;
+}
+
+.theme-toggle:hover{
+    box-shadow: inset 0 -5px 0 #FCA311;
 }
 
 /* to make something proportional, thing/the whole media * 100 is the percent it should take up */
