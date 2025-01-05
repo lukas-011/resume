@@ -18,10 +18,6 @@
     --secondary-text: #A8DADC; /* Soft Aqua */
 }
 
-html{
-    scroll-behavior: smooth;
-}
-
 header {
     margin: 0.5em;
 
@@ -47,41 +43,88 @@ body {
     background-color: var(--bg);
     color: var(--text);
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    height: 100%;
 }
 
 section {
     padding: 1em;
-    background-color: var(--secondary-bg);
-    border-radius: 5px;
     margin: 1em;
-}
-.main-page-container{
-    height: 100vh;
-}
-.about-section{
-    padding: 20px;
-    height: 85vh;
 
-    .about-section-content{
+    background-color: var(--secondary-bg);
+
+    border-radius: 5px;
+    height: 90vh;
+    box-sizing: border-box;
+}
+
+
+.about-section-container{
+    display: flex;
+
+    gap: 30px;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+
+
+    .about-section-sidebar{
+        background-color: var(--accent);
+        box-shadow: 10px 10px var(--bg);
+
         display: flex;
-        gap: 30px;
+        flex-direction: column;
         align-items: center;
+
+        gap: 20px;
+        padding: 2em;
+        height: 100%;
+        max-width: max-content;
+        box-sizing: border-box;
+
+        border-radius: 10px;
+
+        .social-media-icons{
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+
+            [class*="bi "]{
+                width: 30px;
+                height: 33px;
+            }
+
+            .bi-youtube{
+                width: 40px;
+                height: 35px;
+            }
+        }
+    }
+
+    .about-section-main-content{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
         height: 100%;
 
-
-        .about-section-sidebar{
-            background-color: var(--accent);
+        .about-section-main-content-top-items {
             display: flex;
-            flex-direction: column;
-            height: 80%;
-            padding: 3em;
-            border-radius: 10px;
-            box-shadow: 10px 10px var(--bg);
+            flex: 1;
+            gap: 30px;
+
+            .about-section-main-content-skills {
+                flex: 1;
+                background-color: var(--accent);
+                border-radius: 10px;
+                box-shadow: 10px 10px var(--bg);
+            }
+        }
+
+        .about-section-main-content-bottom-items{
+            height: 300px;
         }
     }
 }
+
 
 .profile-picture {
     width: 200px;
