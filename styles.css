@@ -7,19 +7,19 @@
     --secondary-bg: #E5E5E5;
     --text: #14213D;
     --secondary-text: #E5E5E5;
-    --tertiary-text: #FCA311
+    --tertiary-text: #FCA311;
 }
 
 /* Dark Mode Theme */
 [data-theme="dark"] {
-    --primary: #FCA311; /* Keep the same bright primary color for contrast */
-    --accent: #14213D; /* White as the accent for dark mode */
-    --secondary-accent: #3D4A73; /* Dark blue for secondary accents */
-    --bg: #000000; /* Dark blue as the main background color */
-    --secondary-bg: #1F1F1F; /* Slightly lighter dark color for sections */
-    --text: #FFFFFF; /* White text for readability on dark background */
-    --secondary-text: #E5E5E5; /* Slightly muted white for secondary text */
-    --tertiary-text: #FCA311; /* Keep the tertiary text color consistent */
+    --primary: #FCA311;
+    --accent: #14213D;
+    --secondary-accent: #3D4A73;
+    --bg: #000000;
+    --secondary-bg: #1F1F1F;
+    --text: #FFFFFF;
+    --secondary-text: #E5E5E5;
+    --tertiary-text: #FCA311;
 }
 
 header {
@@ -54,58 +54,49 @@ body {
 section {
     padding: 1em;
     margin: 1em;
-
     background-color: var(--bg);
-
     border-radius: 5px;
     height: 90vh;
     box-sizing: border-box;
 }
 
-
-.about-section-container{
+.about-section-container {
     display: flex;
-
     gap: 30px;
     height: 100%;
     padding: 20px;
     box-sizing: border-box;
 
-
-    .about-section-sidebar{
+    .about-section-sidebar {
         background-color: var(--accent);
-        /*box-shadow: 10px 10px var(--bg);*/
-
         display: flex;
         flex-direction: column;
+        flex: 1;
         align-items: center;
-
-        gap: 20px;
+        gap: 16px;
         padding: 2em;
-        height: 100%;
-        max-width: max-content;
         box-sizing: border-box;
-
         border-radius: 10px;
+        width: clamp(500px, 40vw, 700px);
 
-        .social-media-icons{
+        .social-media-icons {
             display: flex;
             gap: 20px;
             justify-content: center;
 
-            [class*="bi "]{
+            [class*="bi "] {
                 width: 30px;
                 height: 33px;
             }
 
-            .bi-youtube{
+            .bi-youtube {
                 width: 40px;
                 height: 35px;
             }
         }
     }
 
-    .about-section-main-content{
+    .about-section-main-content {
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -120,16 +111,14 @@ section {
                 flex: 1;
                 background-color: var(--secondary-accent);
                 border-radius: 10px;
-                /*box-shadow: 10px 10px var(--bg);*/
             }
         }
 
-        .about-section-main-content-bottom-items{
+        .about-section-main-content-bottom-items {
             height: 300px;
         }
     }
 }
-
 
 .profile-picture {
     width: 200px;
@@ -137,7 +126,7 @@ section {
     border-radius: 50%;
     overflow: hidden;
     border: 5px solid var(--primary);
-    /*box-shadow: 0 0 10px var(--bg);*/
+    margin-top: -25px;
 }
 
 .profile-picture img {
@@ -157,6 +146,17 @@ a:hover {
     box-shadow: inset 0 -5px 0 #FCA311;
 }
 
+h1 {
+    color: var(--text);
+    font-size: 1.9rem;
+}
+
+h2 {
+    color: var(--text);
+    font-size: 1.1rem;
+    font-weight: lighter;
+}
+
 .theme-toggle {
     cursor: pointer;
     background-color: var(--accent);
@@ -166,8 +166,8 @@ a:hover {
     transition: box-shadow 0.3s;
 }
 
-.theme-toggle-svg{
+.theme-toggle-svg {
     fill: var(--accent);
 }
 
-/* to make something proportional, thing/the whole media * 100 is the percent it should take up */
+/* To make something proportional, thing/the whole media * 100 is the percent it should take up */
