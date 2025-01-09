@@ -22,6 +22,9 @@
     --tertiary-text: #FCA311;
 }
 
+/*********************************************************************************************/
+
+/* Hero Section Sidebar */
 header {
     .navigation-bar {
         display: flex;
@@ -54,10 +57,9 @@ body {
 }
 
 .hero-page-section{
-    padding: 0;
     display: grid;
     grid-template-columns: 400px 2fr;
-    height: 100%;
+    height: 100vh;
 }
 
 .hero-section-sidebar {
@@ -68,23 +70,9 @@ body {
     gap: 12px;
     padding: 1em;
     height: 100%;
-    overflow: hidden;
+    box-sizing: border-box;
 
-    .social-media-icons {
-        display: flex;
-        gap: 20px;
-        align-items: center;
 
-        [class*="bi "] {
-            width: 30px;
-            height: 33px;
-        }
-
-        .bi-youtube {
-            width: 40px;
-            height: 35px;
-        }
-    }
 
     h3 {
         font-weight: bolder;
@@ -105,6 +93,21 @@ body {
     }
 }
 
+.hero-section-sidebar .social-media-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    [class*="bi "] {
+        width: 30px;
+        height: 33px;
+    }
+
+    .bi-youtube {
+        width: 40px;
+        height: 35px;
+    }
+}
 
 .profile-picture {
     width: 200px;
@@ -122,64 +125,128 @@ body {
     object-position: center center;
 }
 
-.hero-section-main-content {
-    display: grid;
-    height: 100dvh;
+/***********************************************************************************/
+
+/* Hero Section Main Content */
+.hero-section-main-content-container {
+    height: 100%;
     width: 100%;
-    grid-template-rows: 3fr auto;
-    grid-template-columns: 100%;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section-item {
+    width: 100%;
+    height: 100%;
     position: relative;
 }
 
-.about-section-hero-photo {
+.hero-section-item .hero-image {
     width: 100%;
+    height: 100%;
     overflow: hidden;
-    position: relative;
 }
 
-.about-section-CTA-items {
-    background-color: var(--secondary-accent);
-    padding: 2em;
-    box-sizing: border-box;
-    height: auto;
+.hero-section-item .hero-image img {
     width: 100%;
-    z-index: 1;
-    text-align: center;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    transition: filter 0.3s ease;
+}
+
+.hero-text{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s ease, font-size 0.3s ease;
+}
+
+.hero-text h1{
+    color: var(--secondary-bg);
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 3px 2px 4px black;
+}
+
+.hero-section-item:hover .hero-text {
+    transform: translate(-50%, -50%) scale(1.02);
+}
+
+.hero-section-item:hover .hero-image {
+    filter: blur(2px);
 }
 
 @media (max-width: 1075px){
     body {
         overflow: auto;
         -webkit-overflow-scrolling: touch;
+        background-color: var(--accent);
     }
 
     .hero-page-section {
         display: flex;
         flex-direction: column;
         width: 100%;
+        height: auto;
     }
 
     .hero-section-sidebar {
-        height: max-content;
-        width: 100vw;
-        padding: 1em 0;
-    }
-
-    .hero-section-main-content {
-        grid-template-rows: 2fr auto;
-        overflow: visible;
-    }
-
-
-    .about-section-hero-photo {
-        object-fit: scale-down; /* Prevent excessive cropping on smaller screens */
-        visibility: hidden;
-        display: none;
-    }
-
-    .about-section-CTA-items{
         height: auto;
+        width: 100%;
+        padding: 1em;
+        align-items: center;
+    }
+
+    .profile-picture{
+        width: 150px;
+        height: 150px;
+    }
+
+    .hero-section-main-content-container {
+        width: 100%;
+    }
+
+    .hero-section-item{
+        height: auto;
+    }
+
+    .hero-section-item .hero-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .hero-text {
+        position: static;
+        transform: none;
+        margin-top: 1em;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+        color: var(--tertiary-text);
+    }
+
+    .hero-text h2 {
+        font-size: 1rem;
+    }
+    .about-section-hero-image {
+        object-fit: scale-down;
+    }
+
+    .navigation-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navigation-bar .nav-bar-item {
+        font-size: 1rem;
+        padding: 0.5em;
     }
 }
 
