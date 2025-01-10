@@ -3,30 +3,30 @@
     <head>
         <meta charset="UTF-8"/>
         <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-        <title>Lukas McCain - Portfolio</title>
-        <link href="/styles.css" rel="stylesheet"/>
+        <title>Lukas McCain - Home</title>
+        <link href="/styleSheets/HomepageStyle.css" rel="stylesheet"/>
     </head>
 
-    <body>
+    <body id="HomePage">
         <main>
         <!-- Header Section -->
             <header>
                 <nav class="navigation-bar">
-                    <a href="#about" class="nav-bar-item">Home</a>
-                    <a href="" class="nav-bar-item">Projects</a>
-                    <a href="" class="nav-bar-item">Experience</a>
-                    <a href="" class="nav-bar-item">Contact</a>
+                    <a href="Homepage.html" class="nav-bar-item">Home</a>
+                    <a href="EducationPage.html" class="nav-bar-item">Education</a>
+                    <a href="ExperiencePage.html" class="nav-bar-item">Experience</a>
+                    <a href="ContactPage.html" class="nav-bar-item">Contact</a>
                     <button class="theme-toggle" onclick="toggleTheme()"></button>
                 </nav>
             </header>
 
-            <!-- About Section -->
-            <section id="about" class="hero-page-container">
+            <!-- Homepage Section -->
+            <section class="hero-page-container">
                     <aside class="hero-section-sidebar">
                         <h1>Lukas McCain</h1>
 
                         <div class="profile-picture">
-                            <img alt="A Photo Of Me at a Pumpkin Patch" src="images/PumpkinPatchPhotoCropped.jpeg">
+                            <img alt="A Photo Of Me at a Pumpkin Patch" src="../images/PumpkinPatchPhotoCropped.jpeg">
                         </div>
 
                         <div class="social-media-icons">
@@ -51,10 +51,10 @@
                         <div class="key-skills-svgs-container">
                             <div class="key-skills-svgs">
                                 <div class="key-skills-svgs-item">
-                                    <img src="svg/c%23-logo.svg" alt="C Sharp Logo" width="100" height="100">
+                                    <img src="../svg/c%23-logo.svg" alt="C Sharp Logo" width="100" height="100">
                                 </div>
                                 <div class="key-skills-svgs-item">
-                                    <img src="svg/dot-net-logo.svg" alt=".NET Logo" width="100" height="100">
+                                    <img src="../svg/dot-net-logo.svg" alt=".NET Logo" width="100" height="100">
                                 </div>
                                 <div class="key-skills-svgs-item">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5 Logo" width="100" height="100">
@@ -63,7 +63,7 @@
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3 Logo" width="100" height="100">
                                 </div>
                                 <div class="key-skills-svgs-item">
-                                    <img src="svg/mysql-logo.svg" alt="MySQL Logo" width="100" height="100">
+                                    <img src="../svg/mysql-logo.svg" alt="MySQL Logo" width="100" height="100">
                                 </div>
                                 <div class="key-skills-svgs-item">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo" width="100" height="100">
@@ -74,7 +74,7 @@
                     <div class="hero-section-main-content-container">
                         <div class="hero-section-item">
                             <div class="hero-image">
-                                <img class="about-section-hero-image" src="images/WVMountainPhotoCropped.jpeg" alt="Image of Me Standing On a West Virginia Mountain">
+                                <img class="about-section-hero-image" src="../images/WVMountainPhotoCropped.jpeg" alt="Image of Me Standing On a West Virginia Mountain">
                             </div>
                             <div class="hero-text">
                                 <div class="hero-cta-items">
@@ -101,6 +101,6 @@
             document.documentElement.setAttribute("data-theme", newTheme)
         }
         document.documentElement.setAttribute("data-theme", "dark");
-    </script>
+        </script>
     </body>
 </html>

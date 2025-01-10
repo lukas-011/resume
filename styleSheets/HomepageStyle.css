@@ -58,7 +58,7 @@ body {
 
 .hero-page-container{
     display: grid;
-    grid-template-columns: 545px 2fr;
+    grid-template-columns: 560px 2fr;
     height: 100vh;
 }
 
