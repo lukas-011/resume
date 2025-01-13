@@ -2,6 +2,7 @@ import barba from '@barba/core';
 import { gsap } from 'gsap';
 
 barba.init({
+    prefetch: true,
     transitions: [
         {
             name: 'default',
@@ -14,35 +15,7 @@ barba.init({
                 await gsap.to(next.container, { opacity: 1, duration: 1 });
             }
         },
-    ],
-
-    hooks: {
-        // Allows us to dynamically change the stylesheet
-        beforeEnter({ next }) {
-            console.log("Before Enter Hook Triggered")
-            // Get the link tag for the stylesheet
-            const stylesheet = document.getElementById('page-stylesheet');
-            if(!stylesheet) {
-                console.error('Stylesheet link not found');
-                return;
-            }
-
-            // Map namespaces to stylesheets
-            const stylesheets = {
-                'hero-page': '/src/stylesheets/HomepageStyle.css',
-                'education-page': '/src/stylesheets/EducationPageStyle.css',
-                'experience-page': '/src/stylesheets/ExperiencePageStyle.css',
-                'contact-page': '/src/stylesheets/ContactStyle.css',
-            };
-
-            // Get the new stylesheet based on the namespace
-            const newStylesheet = stylesheets[next.namespace];
-
-            // Update the href of the link tag
-            stylesheet.href = newStylesheet;
-            console.log(`Stylesheet updated to: ${newStylesheet}`);
-        },
-    }
+    ]
 });
 
 barba.hooks.beforeEnter(({ next }) => {
