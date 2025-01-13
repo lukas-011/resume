@@ -8,6 +8,7 @@
     --text: #14213D;
     --secondary-text: #E5E5E5;
     --tertiary-text: #FCA311;
+    --secondary-buttons: #1F1F1F
 }
 
 /* Dark Mode Theme */
@@ -20,6 +21,7 @@
     --text: #FFFFFF;
     --secondary-text: #E5E5E5;
     --tertiary-text: #FCA311;
+    --secondary-buttons: #1F1F1F;
 }
 
 /*********************************************************************************************/
@@ -29,7 +31,7 @@
 .navigation-bar {
     display: flex;
     align-content: center;
-    justify-content: space-between;
+    justify-content: left;
     background-color: var(--accent);
     gap: 1em;
     box-sizing: border-box;
@@ -42,17 +44,12 @@
     font-weight: bold;
 }
 
-.navigation-bar .theme-toggle {
-    margin-left: auto;
-}
-
 
 body {
-    background-color: var(--bg);
+    background-color: black;
     color: var(--text);
     font-family: Arial, sans-serif;
     margin: 0;
-
     overflow: hidden;
 }
 
@@ -82,13 +79,14 @@ body {
         margin-top: -25px;
         text-align: left;
     }
+}
 
-    .hero-section-sidebar-main-content{
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
+.hero-section-sidebar-main-content i{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: white;
 }
 
 .hero-section-sidebar .social-media-icons {
@@ -222,7 +220,13 @@ body {
     gap: 20px;
     max-width: 1024px;
 }
-.cta-buttons button {
+
+.cta-buttons-links {
+    height: 100%;
+    width: 100%;
+}
+
+.cta-buttons .cta-buttons-links button {
     cursor: pointer;
     background-color: var(--accent);
     color: var(--primary);
@@ -341,9 +345,15 @@ body {
         color: white;
     }
 
-    .cta-buttons button {
-        background-color: var(--bg);
-        color: var();
+    .cta-buttons .cta-buttons-links button {
+        background-color: var(--secondary-buttons);
+    }
+
+    .cta-buttons button:hover {
+        transform: scale(1.05); /* Slightly increase the size */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow */
+        background: var(--bg);
+        color: var(--accent)
     }
 }
 
@@ -396,15 +406,6 @@ h3 {
 i {
     font-weight: lighter;
     font-size: small;
-}
-
-.theme-toggle {
-    cursor: pointer;
-    background-color: var(--accent);
-    color: var(--primary);
-    border: none;
-    padding: 0.5em 1em;
-    transition: box-shadow 0.3s;
 }
 
 
