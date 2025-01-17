@@ -11,21 +11,22 @@
 <!-- Header Section -->
 <header>
     <nav class="navigation-bar">
-        <a href="Homepage.html" class="nav-bar-item">Home</a>
-        <a href="EducationPage.html" class="nav-bar-item">Education</a>
-        <a href="ExperiencePage.html" class="nav-bar-item">Experience</a>
-        <a href="ContactPage.html" class="nav-bar-item">Contact</a>
+        <a href="index.html" class="nav-bar-item">Home</a>
+        <a href="/EducationPage.html" class="nav-bar-item">Education</a>
+        <a href="/ExperiencePage.html" class="nav-bar-item">Experience</a>
+        <a href="/ContactPage.html" class="nav-bar-item">Contact</a>
     </nav>
 </header>
 
 <main data-barba="container" data-barba-namespace="hero-page">
+    <div id="transition-overlay" style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: black; z-index: 9999;"></div>
     <!-- Homepage Section -->
     <section class="hero-page-container">
         <aside class="hero-section-sidebar">
             <h1>Lukas McCain</h1>
 
             <div class="profile-picture">
-                <img alt="A Photo Of Me at a Pumpkin Patch" src="../resources/images/PumpkinPatchPhotoCropped.jpeg">
+                <img alt="A Photo Of Me at a Pumpkin Patch" src="resources/images/PumpkinPatchPhotoCropped.jpeg">
             </div>
 
             <div class="social-media-icons">
@@ -64,7 +65,7 @@
                         <img src="/resources/svg/csharp-logo.svg" alt="C Sharp Logo" width="100" height="100">
                     </div>
                     <div class="key-skills-svgs-item">
-                        <img src="../resources/svg/dot-net-logo.svg" alt=".NET Logo" width="100" height="100">
+                        <img src="resources/svg/dot-net-logo.svg" alt=".NET Logo" width="100" height="100">
                     </div>
                     <div class="key-skills-svgs-item">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
@@ -75,7 +76,7 @@
                              alt="CSS3 Logo" width="100" height="100">
                     </div>
                     <div class="key-skills-svgs-item">
-                        <img src="../resources/svg/mysql-logo.svg" alt="MySQL Logo" width="100" height="100">
+                        <img src="resources/svg/mysql-logo.svg" alt="MySQL Logo" width="100" height="100">
                     </div>
                     <div class="key-skills-svgs-item">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
@@ -87,7 +88,7 @@
         <div class="hero-section-main-content-container">
             <div class="hero-section-item">
                 <div class="hero-image">
-                    <img class="about-section-hero-image" src="../resources/images/WVMountainPhotoCropped.jpeg"
+                    <img class="about-section-hero-image" src="resources/images/WVMountainPhotoCropped.jpeg"
                          alt="Image of Me Standing On a West Virginia Mountain">
                 </div>
                 <div class="hero-text">
@@ -98,10 +99,10 @@
                             Feel free to connect with me — I’m always open to discussing new challenges and
                             opportunities!</h2>
                         <div class="cta-buttons">
-                            <a class="cta-buttons-links" href="ContactPage.html">
+                            <a class="cta-buttons-links" href="/ContactPage.html">
                                 <button>Contact</button>
                             </a>
-                            <a class="cta-buttons-links" href="ExperiencePage.html">
+                            <a class="cta-buttons-links" href="/ExperiencePage.html">
                                 <button>Learn More</button>
                             </a>
                         </div>
@@ -112,6 +113,7 @@
         </div>
     </section>
 </main>
+</body>
 
 <script type="module" src="/src/main.js"></script>
 <script>
@@ -130,5 +132,5 @@
         window.scrollTo({top: 0, behavior: "instant"});
     }
 </script>
-</body>
+
 </html>

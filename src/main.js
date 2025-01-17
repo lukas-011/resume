@@ -1,49 +1,79 @@
 import barba from '@barba/core';
 import { gsap } from 'gsap';
 
+const stylesheets = {
+    'hero-page': '/src/stylesheets/HomepageStyle.css',
+    'education-page': '/src/stylesheets/EducationStyle.css',
+    'experience-page': '/src/stylesheets/ExperienceStyle.css',
+    'contact-page': '/src/stylesheets/ContactStyle.css',
+};
+
 barba.init({
-    prefetch: true,
+    sync: true,
     transitions: [
         {
-            name: 'default',
+            name: 'cover-transition',
             async leave({current}){
                 console.log('Leave', current.namespace);
-                await gsap.to(current.container, { opacity: 0, duration: 1 });
+
+                // Grab the transition overlay that's not visible on the page
+                const overlay = document.getElementById("transition-overlay");
+
+                // Move the overlay from the left to cover the page
+                await gsap.to(overlay, {
+                    left: 0,
+                    duration: 0.8,
+                    ease: "power2.inOut",
+                });
+
+                // Fade out the current page content
+                current.container.style.opacity = 0;
             },
+
             async enter({next}) {
-                console.log('Enter', next.namespace)
-                await gsap.to(next.container, { opacity: 1, duration: 1 });
+                console.log('Enter', next.namespace);
+
+                // Dynamically create and append the transition overlay if it doesn't exist
+                let overlay = next.container.querySelector('transition-overlay');
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.id = 'transition-overlay';
+                    overlay.style.position = 'absolute';
+                    overlay.style.top = '0';
+                    overlay.style.left = '-100%';
+                    overlay.style.width = '100%';
+                    overlay.style.height = '100%';
+                    overlay.style.background = 'black';
+                    overlay.style.zIndex = '1';
+                    next.container.appendChild(overlay);
+                }
+
+                // Update the stylesheet for the new page
+                const stylesheet = document.getElementById("page-stylesheet");
+                const newStylesheet = stylesheets[next.namespace];
+
+                // If the stylesheet doesn't exist then throw an error
+                if (!(stylesheet && newStylesheet)) {
+                     console.error("Stylesheet or namespace missing");
+                }
+
+                // Replace the current stylesheet with the new one
+                stylesheet.href = newStylesheet;
+
+                // Fade in the new page content
+                next.container.style.opacity = 0;
+
+                // Move right to reveal the page
+                await gsap.to(overlay, {
+                    left: "100%",
+                    duration: 0.8,
+                    ease: "power2.inOut",
+                });
+
+                // Reset the overlay position
+                gsap.set(overlay, { left: "-100% "});
+                gsap.to(next.container, { opacity: 1, duration: 0.8 });
             }
         },
     ]
-});
-
-barba.hooks.beforeEnter(({ next }) => {
-    console.log("Global After Enter Hook Triggered");
-
-    // Get the link tag for the stylesheet
-    const stylesheet = document.getElementById('page-stylesheet');
-    if (!stylesheet) {
-        console.error('Stylesheet link not found');
-        return;
-    }
-
-    // Map namespaces to stylesheets
-    const stylesheets = {
-        'hero-page': '/src/stylesheets/HomepageStyle.css',
-        'education-page': '/src/stylesheets/EducationStyle.css',
-        'experience-page': '/src/stylesheets/ExperienceStyle.css',
-        'contact-page': '/src/stylesheets/ContactStyle.css',
-    };
-
-    // Get the new stylesheet based on the namespace
-    const newStylesheet = stylesheets[next.namespace];
-    if (!newStylesheet) {
-        console.error(`No stylesheet found for namespace: ${next.namespace}`);
-        return;
-    }
-
-    // Update the href of the link tag
-    stylesheet.href = newStylesheet;
-    console.log(`Stylesheet updated to: ${newStylesheet}`);
 });

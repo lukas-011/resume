@@ -41,6 +41,7 @@ body {
     background-color: var(--accent);
     gap: 1em;
     box-sizing: border-box;
+    z-index: 10;
 }
 
 .navigation-bar .nav-bar-item {
@@ -75,9 +76,9 @@ body {
 
 /*********************************************************************************************/
 /*Main content*/
-.about-page-container {
+.education-page-container {
     height: 100%;
-    width: 100%;
+    width: 100vh;
     background-color: var(--primary);
 }
 
