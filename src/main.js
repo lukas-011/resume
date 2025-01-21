@@ -72,7 +72,7 @@ barba.init({
 
                 // Reset the overlay position
                 gsap.set(overlay, { left: "-100% "});
-                gsap.to(next.container, { opacity: 1, duration: 0.8 });
+                gsap.to(next.container, { opacity: 1, duration: 0.3 });
             }
         },
     ]
