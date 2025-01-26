@@ -33,7 +33,6 @@
     align-content: center;
     justify-content: left;
     background-color: var(--accent);
-    gap: 1em;
     box-sizing: border-box;
     z-index: 10;
 }
@@ -43,11 +42,13 @@
     padding: 1em;
     font-size: 1.3em;
     font-weight: bold;
+    width: 11.66rem;
+    text-align: center;
 }
 
 
 body {
-    background-color: black;
+    background-color: var(--accent);
     color: var(--text);
     font-family: Arial, sans-serif;
     margin: 0;
