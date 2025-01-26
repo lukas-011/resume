@@ -3,7 +3,6 @@ import { gsap } from 'gsap';
 
 const stylesheets = {
     'hero-page': '/src/stylesheets/HomepageStyle.css',
-    'education-page': '/src/stylesheets/EducationStyle.css',
     'experience-page': '/src/stylesheets/ExperienceStyle.css',
     'contact-page': '/src/stylesheets/ContactStyle.css',
 };

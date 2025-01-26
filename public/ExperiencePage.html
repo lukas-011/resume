@@ -5,6 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Lukas McCain - Experience</title>
     <link id="page-stylesheet" href="/src/stylesheets/ExperienceStyle.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body id="wrapper" data-barba="wrapper">
@@ -22,12 +23,29 @@
     <!-- About Section -->
     <section class="experience-page-container">
         <div class="w-full rounded-lg h-screen grid grid-cols-[minmax(300px,560px)_2fr]">
-            <div class=" h-full w-full" style="background: var(--accent);">
-                main degree content
+            <div class="bg-accent flex flex-col items-center gap-3 p-4 box-border
+                        h-full w-full"
+                        style="background: var(--accent);">
+<!--                2. a profile picture for my graduation,-->
+<!--                3. my quick links still,-->
+<!--                4. my education summary (University, degree, and year)-->
+<!--                5. Honors and awards (later my certs)-->
+                <div class="w-[200px] h-[200px] rounded-full overflow-hidden mt-[25px]" style="border: 5px solid var(--primary)">
+                    <img class="w-full h-full object-cover object-center" src="../resources/images/GradPhoto.jpeg" alt="Photo of me at graduation">
+                </div>
             </div>
 
-            <div class="h-full w-full" style="background: black;">
-                <div class="grid grid-cols-2 gap-4 p-6 max-w-4xl mx-auto h-[500px]">
+            <div class="h-full w-full overflow-y-scroll" style="background: black;">
+                    <!--For my main content
+                        1. My Education details
+                        2. My work experience
+                        3. Personal Projects
+                        4. Certs for later
+                        5. Details of awards
+                        6. resume download section
+                    -->
+
+                <div class="grid grid-cols-2 gap-4 p-6 max-w-4xl mx-auto h-[500px] ">
                     <!-- Box 1 (Large) -->
                     <div class="col-span-2 md:col-span-1 bg-blue-500 p-6 rounded-2xl shadow-lg flex items-center justify-center text-white text-lg font-bold h-full">
                         Large Box (1x2)
