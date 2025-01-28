@@ -82,6 +82,38 @@ body {
     background-color: var(--primary);
 }
 
+a svg {
+    transition: fill 0.3s ease;
+}
+
+a svg:hover.bi-linkedin {
+    fill: #0e76a8;
+}
+
+a svg:hover.bi-youtube {
+    fill: #FF0000;
+}
+
+a svg:hover.bi-github{
+    fill: black;
+}
+
+.social-media-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    [class*="bi "] {
+        width: 30px;
+        height: 33px;
+        fill: var(--primary);
+    }
+
+    .bi-youtube {
+        width: 40px;
+        height: 35px;
+    }
+}
 /*********************************************************************************************/
 /*Small Screens*/
 @media (max-width: 1075px) {
