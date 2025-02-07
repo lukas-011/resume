@@ -2,9 +2,9 @@ import barba from '@barba/core';
 import { gsap } from 'gsap';
 
 const stylesheets = {
-    'hero-page': '/public/css/HomepageStyle.css',
-    'experience-page': '/public/css/ExperienceStyle.css',
-    'contact-page': '/public/css/ContactStyle',
+    'hero-page': '/css/HomepageStyle.css',
+    'experience-page': '/css/ExperienceStyle.css',
+    'contact-page': '/css/ContactStyle',
 };
 
 barba.init({
