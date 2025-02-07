@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 const stylesheets = {
     'hero-page': '/css/HomepageStyle.css',
     'experience-page': '/css/ExperienceStyle.css',
-    'contact-page': '/css/ContactStyle',
+    'contact-page': '/css/ContactStyle.css',
 };
 
 barba.init({
