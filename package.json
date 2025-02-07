@@ -5,7 +5,8 @@
   },
   "dependencies": {
     "@barba/core": "^2.10.3",
-    "gsap": "^3.12.5"
+    "gsap": "^3.12.5",
+    "wrangler": "^3.107.3"
   },
   "name": "resume",
   "version": "1.0.0",
@@ -14,7 +15,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preview:worker": "npm run build && wrangler dev",
+    "deploy:worker": "nmp run build && wrangler deploy"
   },
   "repository": {
     "type": "git",
