@@ -187,6 +187,7 @@ body {
     left: 40%;
     transform: translate(-50%, -50%);
     transition: 0.3s ease, font-size 0.3s ease;
+    row-gap: 3rem;
 }
 
 .hero-text .hero-cta-items h1{
