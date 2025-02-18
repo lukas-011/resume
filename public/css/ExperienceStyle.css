@@ -114,6 +114,12 @@ a svg:hover.bi-github{
         height: 35px;
     }
 }
+
+.framed {
+    box-shadow:
+            -60px -60px 0 -40px var(--secondary-accent),
+            55px 55px 0 -40px var(--accent);
+}
 /*********************************************************************************************/
 /*Small Screens*/
 @media (max-width: 1075px) {
